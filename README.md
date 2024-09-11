@@ -7,7 +7,7 @@ previo a inicializar el desarrollo de software para web usando el fremework de N
 
 ## Historial de practicas
 
-|No.|Descripcion|Estatus|
+|No|Descripcion|Estatus|
 |--|--|--|
 |1|Metologia de Evaluacion|Activa|
 |2|Inicializacion del Proyecto de Fundamentos de JS|Activa|
