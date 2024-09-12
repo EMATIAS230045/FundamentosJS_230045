@@ -25,9 +25,9 @@ header p{
     font-size: 2.3rem;
 
 }
-header a{
-    color: brown;
+header p a{
     text-align: center;
+    color: brown;
     font-size: 2.3rem;
     text-decoration: none;
 }
