@@ -35,5 +35,5 @@
 
 //null
 
-const descuento = null
-console.log(typeof descuento)
+// const descuento = null
+// console.log(typeof descuento)
