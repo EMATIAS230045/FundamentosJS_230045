@@ -1,0 +1,42 @@
+html{
+    box-sizing: border-box;
+    font-size: 70%;
+}
+body{
+    font-size: 1.6 gren;
+    font-family: "lato", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: bisque;
+
+}
+*, *:before,*:after{
+box-sizing: inherit;
+}
+header{
+    padding: 3rem;
+}
+header h1{
+    text-align: center;
+    color:saddlebrown;
+    font-size: gren;
+    font-size: 3.6rem;
+    
+}
+header p{
+    color: brown;
+    text-align: center;
+    font-size: 2.3rem;
+
+}
+header p a{
+    text-align: center;
+    color: brown;
+    font-size: 2.3rem;
+    text-decoration: none;
+}
+.DOM p{
+    color: black;
+    font-size: 20px;
+}
+.DOM #formulario {
+    max-width: 30px;
+}
