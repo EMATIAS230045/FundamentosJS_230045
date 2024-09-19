@@ -1,5 +1,7 @@
 // string o cadenas de texto
 
+const { warn } = require("vue");
+
 const alumno = "Erick Matias Granillo"
 let producto1 = 'Monitor 20 pulgadas'
 //const numero = "30"
@@ -44,3 +46,22 @@ console.warn("--- Tipo de dato - Symbol ")
 console.warn("--- Tipo de dato - Null (Nulo)")
 // const descuento = null
 // console.log(typeof descuento)
+
+
+//clase de profe mark
+
+const producto = {
+    nombre: "Tablet 9",
+    marca: "mac",
+    modelo: "Tablet 9/",
+    SKU: Symbol("55366D546442"),
+    colores: ["Blanco","Rojo","negro","amarrillo", "rosa", "azul"],
+}
+
+console.warn("---Objetos---")
+console.table(producto)
+// Los obejetos tambien pueden representarse por tablas con el comando 
+
+//Acceder a las propiedades de un objeto
+console.warn("Leyendo las propiedades dde un objeto y sus tipos de datos")
+console.log()

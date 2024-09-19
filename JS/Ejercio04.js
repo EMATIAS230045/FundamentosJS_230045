@@ -8,7 +8,7 @@ const producto = {
      nombre: "Tablet",
      precio: 300,
  disponible: true
-}
+} //este es u8n objeto cuando declaras propiedades agregas una coma
 
 console.log(producto)
 console.log(producto)
