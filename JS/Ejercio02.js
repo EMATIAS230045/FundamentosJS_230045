@@ -211,5 +211,25 @@ estatussentimental = null
 console.log(`El usario  ${nombredeusario} esta intentando logearse con una con una contraseña de  : ${passusario}, se ha logrado de exitosamente, al tener acesso a su informacion de perfil podemos 
 deducir que es del genero ${generodeusuario} y su estatus de relacion es de: ${estatussentimental} y su ultima publicacion la realizo el: ${fecha_ultimopost}`);
 
+
+console.log("comparacion de la equidad entre Undefiened y Null:")
+console.log(
+(fecha_ultimopost==estatussentimental)?
+ "Ambas variables tienen el mismo valor":
+ "Las variables  no tienen el mismo valor"
+);
+ console.log("comparacion de la Indentidad entre Undefiened y Null:")
+ console.log(
+(fecha_ultimopost===estatussentimental)?
+ "Ambas variables tienen el mismo valor":
+ "Las variables  no tienen el mismo valor"
+ );
+
+
+ // 8. FUNCTION (Funciones)
+ //Declaramos una funcion que nos permita recibir un parametro en este caso el nombre de la persona a saludar, y le enviamos un saludo
+ const  saludar = function(nombre){return `hola, ${nombre}!`}
+ console.log(saludar('matias'));
+ console.log(`El tipo de dato de la constante saludar es: ${typeof(saludar)}`)
 // const descuento = null
 // console.log(typ
