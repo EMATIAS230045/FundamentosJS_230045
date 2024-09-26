@@ -1,126 +1,353 @@
-// string o cadenas de texto
-//const { warn } = require("vue");
+// Objetos
+const bg = "linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 76%)";
+const style_console = `background: ${bg}; color:white; border-radius: 6px; padding: 4px; font-size: 1.0rem font-weight: bold`;
 
-const alumno = "Erick Matias Granillo"
-let producto1 = 'Monitor 20 pulgadas'
-//const numero = "30"
-//const numero2 = 30
-console.warn("--- Tipo de dato - String (cadena o de texto)")
+console.log("%c1.- Objetos ", style_console);
 
-console.log (`El nombre del alumno es: ${alumno}, que es un tipo de dato ${typeof{alumno}} `);
-console.log (`El nombre del Producto es: ${producto1}, que es un tipo de dato ${typeof{producto1}} `);
-console.log (`Mas adelante podremos transformar el contenido de los strings usando funciones especificas para convertirlos en mayusculas ${alumno} => ${alumno.toUpperCase()} `);
-//console.log(typeof numero)
-//console.log(typeof numero2)
+// const nombre = "Tablet";
+// const precio = 300;
+// const disponible = true;
 
-//BigInit
-console.warn("--- Tipo de dato - BigInit (Numeros Grandes)")
-const NumeroGrande = BigInt(1234567890)
-const NumeroGrande2 = BigInt(12345678901234567890)
-const NumeroGrande3 = BigInt(12345678901234567890123456789)
-const NumeroGrande4 = BigInt(123456789012345678901234567891234567890)
-//const numerogrande = BigInt(918298193891887139831091038173813)
-//console.log(typeof numerogrande)
-
-// const numero = 10
-// const numero2 = 20
-//console.log( numero + Number(numerogrande))
-
-// const numero = "30"
-// const numero2 = 30
-
-// console.log(typeof String(numero2))
-// console.log(typeof Number(numero))
-
-//symbol
-console.warn("--- Tipo de dato - Symbol ")
-// const primerSymbol = Symbol(30)
-// const segundoSymbol = Symbol(30)
-
-// console.log( primerSymbol == segundoSymbol )
-// console.log(primerSymbol.valueOf() )
-// console.log(segundoSymbol.valueOf() )
-
-//null
-console.warn("--- Tipo de dato - Null (Nulo)")
-// const descuento = null
-// console.log(typeof descuento)
-
-
-//clase de profe mark
-const bg = "linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,225.1) 86%)";
-const style_console = `background: ${bg}; color: white; border-radius: 6px; padding 4px;  font-size:1.0rem; font-weigh: bold`
 const producto = {
+    nombre1: "Tablet 9",
+    modelo1: "iPad",
+    marca1: "Mac",
+    precio_venta: 300,
+    precio_compra: 15355.20,
+    disponible: true,
+    SKU1: Symbol("KOU"),
+    colores1: ["Blanco", "Negro", "Amarillo", "Rosa", "Azul"],
+}
+console.log(producto);
+//Los objetos pueden representarse en formato de tabla utilizando  console.table
+console.table(producto);
+
+console.log(producto.nombre1);
+console.log(producto.marca1);
+console.log(producto.modelo1);
+console.log(producto.precio_venta);
+console.log(producto.precio_compra);
+console.log(producto.colores1);
+console.log(producto.disponible);
+
+// Destructuring
+console.log("%c2.-Destructuring (Sacar una Estructura) ", style_console);
+
+const { nombre1, precio_venta, precio_compra, colores1, marca1, modelo1, disponible } = producto;
+console.log(nombre1);
+console.log(precio_compra);
+console.log(precio_venta);
+console.log(marca1);
+console.log(colores1);
+console.log(modelo1);
+console.log(disponible);
+
+
+console.log("Leyendo las Propiedades de un Objeto y sus tipos de datos")
+console.log(`Nombre del Producto: ${producto.nombre1} que es del tipo: ${typeof (producto.nombre1)}`);
+console.log(`Marca del Producto: ${producto.marca1} que es del tipo: ${typeof (producto.marca1)}`);
+console.log(`Modelo del Producto: ${producto.modelo1} que es del tipo: ${typeof (producto.modelo1)}`);
+console.log(`Precio Venta del Producto: ${producto.precio_venta} que es del tipo: ${typeof (producto.precio_venta)}`);
+console.log(`Precio Compra del Producto: ${producto.precio_compra} que es del tipo: ${typeof (producto.precio_compra)}`);
+console.log(`Colores del Producto: ${producto.colores1} que es del tipo: ${typeof (producto.colores1)}`);
+console.log(`Disponibilidad del Producto: ${producto.disponible} que es del tipo: ${typeof (producto.disponible)}`);
+
+
+console.log("%c3.-Variables Independientes", style_console);
+
+let Producto_Nombre = "Tennis Nike";
+let Producto_Marca = "Nike";
+let Producto_Modelo = "1344";
+let Producto_Precio = 10302.0;
+let Producto_Disponibilidad = true;
+let Producto_SKU = Symbol("TEV3W-HTY78");
+let Producto_Stock = 20;
+let Producto_Imagen = null;
+let Producto_Barcode;
+let Producto_Categorias = ["Moda", "Ropa"];
+
+// accedemos a los valores de las caracteristicas del producto de manera independiente
+
+console.log(`Los datos del PRODUCTO son:\n\n Nombre del producto: ${Producto_Nombre} que es del tipo: ${typeof (Producto_Nombre)}\nMarca del producto:${Producto_Marca} que es del tipo: ${typeof(Producto_Marca)}, \nModelo del producto:${Producto_Modelo} que es del tipo:
+ ${typeof (Producto_Modelo)},\nPrecio del producto: ${Producto_Precio} que es del tipo:${typeof(Producto_Precio)},\nDisponibilidad del producto:${Producto_Disponibilidad} que es del tipo:${typeof(Producto_Disponibilidad)},
+ Stock del producto: ${Producto_Stock} que es del tipo:${typeof (Producto_Stock)},\nImagen del producto: ${Producto_Imagen} que es del tipo:${typeof(Producto_Imagen)},
+ Barcode del producto: ${Producto_Barcode} que es del tipo:${typeof(Producto_Barcode)},\nCategorias del producto: ${Producto_Categorias} que es del tipo:${typeof(Producto_Categorias)} `)
+
+
+console.log("SKU como es Symbol no se puede concatenar a la cadena");
+console.log(Producto_SKU);
+console.log(typeof(Producto_SKU));
+
+
+//  Ahora se declara como objeto
+
+let Productos = {
     nombre: "Tablet 9",
-    marca: "mac",
-    modelo: "Tablet 9/",
-    SKU: Symbol("55366D546442"),
-    colores: ["Blanco","Rojo","negro","amarrillo", "rosa", "azul"],
-}
-
-console.warn("---Objetos---")
-console.table(producto)
-// Los obejetos tambien pueden representarse por tablas con el comando 
-
-//Acceder a las propiedades de un objeto
-console.warn("Leyendo las propiedades dde un objeto y sus tipos de datos")
-console.log()
-
-console.log("en") 
-
-
-
-
-//backlog
-//Ahora leemos el objeto completo
-const producto2hol2 = {
-    clave: 555,
-    imagen: `/ASSETS/windows-tablet`,
-    marca: "windows",
-    modelo: "wilde3/",
-    nombre: "Tablet 12",
-    precio: "3692",
+    modelo: "iPad",
+    marca: "Mac",
+    precio: 300,
+    stock: 18,
     disponibilidad: true,
-    stock: 5,
-    SKU: Symbol("55366D546442"),
-    colores: ["Blanco","Rojo","negro","amarrillo", "rosa", "azul"],
-    barcode: 923213,
-    categorias: ["Deportes","Lentes","Hombre","Accesorios"],
+    SKU: "DGJ56-453",
+    imagen: "../ASSETS/Product-Image-Galaxy-Tab-S6-2.jpg",
+    barcode: null,
+    categorias: ["Tecnologias", "Equipos", "Avances"],
+    ID: 100,
 }
-let comprador =
-{
-    clave: 3216,
-    nombre: "matias",
-    apellidos:"Granillo Mejia",
-    tipo: "frecuente",
-    correo: "egranillomejia@gmail.com",
+
+// Ahora leemos el objeto
+console.table(Productos);
+
+console.log("Accedemos a las propiedades especificas del PRODUCTO");
+console.log(`Nombre Completo del Producto: ${Productos.nombre} ${Productos.marca} ${Productos.modelo}`);
+console.log(`Precio: ${Productos.precio}`);
+if (Productos.disponibilidad == 0)
+    console.log(`Estatus: Agotado`)
+else 
+console.log(`Estatus: ${Productos.stock} unidades disponibles`);
+
+
+// Destructuracion de Objetos
+console.log("%c4.- Destructuracion de Objetos", style_console);
+
+let Producto2 = {
+    Clave: 207,
+    Nombre: "Toallas",
+    Marca: "Saba",
+    Modelo: "Nocturnas",
+    Precio: 42.5,
+    Disponibilidad: true,
+    Stock: 100,
+    Imagen: "../ASSETS/Product-Image-Galaxy-Tab-S6-2.jpg",
+    Barcode: 26589622,
+    Categorias: ["Higiene", "Comodidad"],
+    ID: 3216,
+}
+
+
+//NOTAS
+
+
+
+//Los tipos de datos que empiezan con llaves son arrreglos y lo que esta adentro son mapas
+
+
+
+
+
+
+
+
+
+let Comprador= {
+    Nombre: "Erick Matias",
+    Apellidos: "Granillo Mejia",
+    Tipo: "Regular",
+    Correo: "230045@utxicotepec.edu.mx",
     PaisOrigen: "Mexico",
-    SaldoActual: 14000.00,
-}
-let pedido =
-{
-    Producto_clave: 3216,
-    comprador_clave: 3456,
-    cantidad: 3,
-    Estatus: "carrito de comprar",
-    TipoPago: "targeta de credito",
+    SaldoActual: 1754.0,
+    ID: 100,
 }
 
-//en base a los 3 objetos necesitamos calcular el costo de la compra y si le alcanza con sus saldo a favor 
+let Pedido ={
+    Producto_Clave: 236,
+    Comprador_Clave: 1564,
+    Cantidad: 3,
+    Estatus: "Carrito",
+    TipoPago: "Tarjeta de Debito",
+    ID: 5816
+}
 
-let {precio: producto_precio2 } = producto2hol2;
-let {cantidad: pedido_cantidad } = pedido;
-let {SaldoActual: Cliente_SaldoActual} = comprador;
-let costo_compra = producto2hol2_precio2 * pedido_cantidad;
+// En base a los 3 objetos necesitamos calcular el costo de la compra y si le alcanza con su saldo a favor
+
+let {Precio: Producto2_Precio2 } = Producto2;
+let {Cantidad: Pedido_Cantidad} = Pedido;
+let {SaldoActual: Cliente_SaldoActual} = Comprador;
+let Costo_Compra = Producto2_Precio2 * Pedido_Cantidad;
+
+console.log(`El cliente ha agregado a su carrito de compras ${Pedido_Cantidad} unidades, con un costo total de: ${Costo_Compra}`);
+if (Costo_Compra<Cliente_SaldoActual)
+    console.log("El cliente tiene saldo suficiente");
+ 
+// Actualizar valores de las propiedades de un objeto
+
+console.log("%c5.- Actualizacion de los valores de las propiedades de un Objeto", style_console);
+
+console.log(`El objeto actualmente tiene los siguientes valores`);
+console.log(JSON.stringify(Producto2,null,2)); 
+
+// Convierte el objeto a una cadena para evitar problemas con las referencias
+console.log(`Por cuestiones de inflacion el costo del producto ha cambiado y debe ser actualizado... de $42.5, $42.0`);
+// Para modificar el valor de un objeto basta con igualar el nuevo valor de la
+//propiedad deseada
+Producto2.Precio=6915.50;
+console.log(`Los nuevos valores del Producto son:`);
+console.log(Producto2);
+// ¿Puedo cambiar no solo el valor , sino el tipo de dato de un Objeto en Javascript?
+console.log(`----------------`);
+console.log(`El objeto actualmente tiene los siguientes valores`);
+let tipoDisponibilidad = typeof(Producto2.Disponibilidad);
+
+console.log(`El tipo de dato de la disponibilidad es: ${tipoDisponibilidad}`);
+console.log(JSON.stringify(Producto2, null, 2));
+Producto2.Disponibilidad="Si";
+// Disponiblidad Booleano
+let nuevoTipoDisponibilidad = typeof(Producto2.Disponibilidad);
+
+//Console.log(Producto2);
+//Console.log(`El nuevo tipo de dato de la disponibilidad es: ${nuevoTipoDisponibilidad}`);
+
+//Agregar nuevas propiedades a un objeto existente
+console.log("%c6.- Agregación de la Propiedad de un Objeto (MUTACIÓN)", style_console);
+console.log("Objeto antes de ser modificado");
+console.table(JSON.stringify(Comprador));  
+
+//Agregando propiedades
+Comprador[`Direccion`] = "Calle Tejeria S/N Col.Centro";
+Comprador[`Tipo`] = "Alta";
+Comprador[`Estuatus`] = "Inactiva";
+Comprador[`Total Compra`] = 560;
+console.log("Objeto antes de ser modificado");
+console.table(Comprador);
 
 
+//Eliminar nuevas propiedades a un objeto existente
+console.log("%c7.- Eliminación de la Propiedad de un Objeto (MUTACIÓN)", style_console);
+console.log("Objeto antes de ser modificado");
+console.table(Pedido);
+
+// Eliminamos la propiedad de TipoPago de Pedido
+delete Pedido[`TipoPago`];
+console.log("Objeto después de ser modificado");
+console.table(Pedido)
 
 
-console.table(productohol2)
-console.log("Accediendo a propiedades especificas del producto")
-console.log(`Nombre Completo del producto: ${producto2hol2.nombre} ${producto.marca} ${producto.modelo}`)
-console.log(`precio: ${producto2hol2.precio}`)
-if(producto.disponibilidad == 0)
-    console.log(`el cliente ha agreado a su carrito de compras ${pedido_cantidad} undidades, con un costo total de : $${costo_compra}`);
-if(costo_compra< Cliente_SaldoActual)
-    console.log("El cliente tiene saldo suficiente")
+//Métodos para controlar la Mutabilidad de los Objetos, Congelación (FREEZE)
+console.log("%c8.- Métodos para controlar la Mutabilidad de los Objetos, Congelación (FREEZE)", style_console);
+
+// Si deseamos no perimitir que los objetos sean modificados ni en estructura, ni en valor, utilizaremos el método FREEZE
+
+console.log(`La estructura actual del objeto Comprador es: `);
+console.table(Comprador);
+Object.freeze(Comprador);
+//intentaremos agregar , eliminar o modificar los valores de sus propiedades
+Comprador.FechaUltimaCompra = "12-09-2024";
+delete Comprador.Tipo;
+Comprador.Direccion= "Calle 5 Mayo #126, Col.Centro, Xicotepec de Júarez, Puebla, México";
+console.log(`Verificamos si se reralizaron los cambios en nel objeto`);
+console.table(Comprador);
+
+
+//Métodos para controlar la Mutabilidad de los Objetos, Sellado (SEAL)
+console.log("%c9.- Métodos para controlar la Mutabilidad de los Objetos, Sellado (SEAL)", style_console);
+
+// Sin embargo, en el caso que deseamos poder modificar los valores de las propiedades del objeto, pero no su estructura, usaremos SEAL
+console.log("Objeto antes de ser modificado:");
+console.table(Pedido);
+
+Object.seal(Pedido)
+//Intentaremos modificar su estructura
+Pedido[`FechaPedido`]= "23-08-2024";
+delete Pedido[`Cantidad`];
+console.log(`Verificamos si se realizaron los cambios en el Objeto Pedido`);
+console.table(Pedido);
+
+//Ahora se intentara modificar el valor de las propiedades
+Pedido.Cantidad = 10;
+console.log(`Verificamos si se realizaron los cambios en el Objeto Pedido`);
+console.table(Pedido);
+
+// Desestructuración de 2 o más Objetos
+console.log("%c10.- Desestructuración de 2 o más Objetos", style_console);
+
+let {Precio: productoPrecio, Marca: productoMarca} = Producto2;
+let {Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo ,Tipo: clienteTipo} = Comprador;
+
+//Transformar valores cuantitativos en cualitativos
+if (productoPrecio > 2000)
+    productoPrecio = "Caro";
+else 
+    productoPrecio = "Barato";
+
+if (clienteSaldo > 0)
+    clientePais = "A favor";
+else if (clienteSaldo < 0)
+    clienteSaldo = "En contra"
+else
+    clienteSaldo = "Sin deuda";
+
+
+//Transformar valores  cualitativos en cuantitativos 
+
+let clienteNivel ;
+if (clienteTipo == "Pemium")
+    clienteNivel = 1;
+if (clienteTipo == "Freemium");
+    clienteNivel = 2;
+if (clienteNivel == "No identificado")
+    clienteNivel = 3;
+
+// Clasificamos al cliente por su País de Origen
+
+if (clientePais == "Mexico")
+    clientePais = "Nacional";
+else 
+    clientePais = "Extranjero";
+
+
+// OLE Object Literal Ennhacement
+let datosClientePromociones = {clienteCorreo, clientePais, clienteNivel,productoMarca,productoPrecio,clienteSaldo}
+// El nuevo objeto que se creara seria un ejemplo de la información que enviariamos al area de marketing para la difusión de promociones
+console.log("Los datos del cliente y sus hábitos de compra son: ")
+console.table(datosClientePromociones);
+
+//Operaciones sobre Objetos y Unión de Objetos
+console.log("%c11.- Union de Objetos usando el metodo metodo de asignacion (ASSING)", style_console);
+
+    console.log("Imprimimos la estructura y valores del objeto PRODUCTO")
+    console.table(Producto2);
+    // Suponiendo que el usuario ya realizo el pago el pedido se convertira en una venta que quiere informacion deambos objetos
+    let Producto3 = {...Producto2}
+    let pedido3 = {...Pedido}
+    const Venta = Object.assign(Producto3, Pedido);
+    console.log("Consultamos este nuevo objeto")
+    console.table(Venta)
+    
+    
+    //IMPORTANTE 
+    //Al momento de hacer un assign , no solo permite mutar el objeto asignado si no tambien los objetos existentes en sus propiedades que comparten nombre
+    
+    //se utilizan los ... puntos para clonar un objeto y crear un nuevo espacio en memoria de los heap 
+    
+    
+    //Union de objetos usando SPREAD OPERTOR para evitar la perdida de informacion con los objetos que comparten el mismo nombre en las propiedades
+    console.log("%c11.- Union de Objetos Usando el SPREAD OPERATOR (...)", style_console)
+    console.table(Producto2)
+    console.table(Comprador)
+    console.table(Pedido)
+    let venta2 = {
+        producto: {...Producto2},
+        Comprador: {...Comprador},
+        Pedido: {...Pedido},
+    }
+    console.log("Funcionamos los 3 objetos en un objeto sin perdida de inforamcion")
+    console.log(venta2)
+    console.table(venta2)
+
+    //vamos a verificar el estatus de mutabilidad de los objetos
+    console.log(`vamos a verificar el estatus de mutabilidad de los objetos(comprador)`)
+    console.log (`Esta el objeto de pedido congelado ? : ${Object.isFrozen(Comprador)}`)
+    console.log (`Esta el objeto de pedido sellado ? : ${Object.isSealed(Comprador)}`)
+
+    console.log(`vamos a verificar el estatus de mutabilidad de los objetos(pedido)`)
+    console.log (`Esta el objeto de pedido congelado ? : ${Object.isFrozen(Pedido)}`)
+    console.log (`Esta el objeto de pedido sellado ? : ${Object.isSealed(Pedido)}`)
+
+console.log(`vamos a verificar el estatus de mutabilidad de los objetos(producto)`)
+    console.log (`Esta el objeto de pedido congelado ? : ${Object.isFrozen(Producto2)}`)
+    console.log (`Esta el objeto de pedido sellado ? : ${Object.isSealed(Producto2)}`)
+
+        // legacy significa que ya no se producen
+    Producto2[`isLegacy`]=False;
+    console.log(Producto2)
+    console.log(venta2)
