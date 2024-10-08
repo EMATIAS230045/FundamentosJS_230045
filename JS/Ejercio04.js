@@ -118,8 +118,8 @@ console.table(arregloMixto)
 
 console.log("%c6.- Agregar un nuevo elemento a un arreglo (UNSHIFT) en la posición inicial",style_console)
 console.table(estudiantes)
-console.log("Ahora agregamos a Raúl Pasos, al comienzo del arreglo.")
-arregloMixto.unshift("tadeo")
+console.log("Ahora agregamos a dani, al comienzo del arreglo.")
+estudiantes.unshift("dani")
 console.log("La lista atual es:")
 console.table(estudiantes)
 
@@ -129,14 +129,14 @@ console.log("El arreglo tiene los siguientes elementos: ")
 console.table(estudiantes)
 console.log("Para este caso eliminaremos a brisa, en la última posición. ")
 console.log("Después de eliminar el elemento el arreglo quedo de la siguiente manera:")
-arregloMixto.pop();
+estudiantes.pop();
 console.table(estudiantes)
 
 
 console.log("%c8.- Eliminar el elemento de un arreglo en la primera posición (SHIFT)",style_console)
 console.log("El arreglo tiene los siguientes elementos:")
 console.table(estudiantes)
-console.log("Para este caso eliminaremos a tadeo, en la primera posición.")
+console.log("Para este caso eliminaremos a dani, en la primera posición.")
 estudiantes.shift();
 console.log("Después de eliminar el elemento del arreglo quedo de la siguiente manera: ")
 console.table(estudiantes);
