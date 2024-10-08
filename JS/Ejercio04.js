@@ -98,7 +98,7 @@ console.log(`La longitud de la fila ${[i]} es = ${matrizIrregular[i].length}`)
 
 console.log("$c5.- Agregar un nuevo elemento a un arreglo (PUSH)",style_console);
 
-let estudiantes = ["Matías Granillo", "Ciclalli", "diego", "derek","yazmin","adrian"]
+let estudiantes = ["Matías", "Ciclalli", "diego", "derek","yazmin","adrian"]
 console.log("Los elementos actuales del arreglo son: ")
 console.table(estudiantes)
 console.log(`Agregamos a un nuevo estudiante llamado: brisa`)
@@ -145,3 +145,62 @@ console.table(estudiantes);
 console.log("%c9.- Modificar un arreglo en un arreglo nuevo con posiciones definidas (SPLICE)", style_console)
 console.log("El arreglo original tiene los elementos:")
 console.table(estudiantes);
+console.log("se divide el arrglo")
+estudiantes.splice(2);
+console.table(estudiantes)
+estudiantes.push("Brisa");
+estudiantes.push("carlos");
+estudiantes.push("jesus");
+estudiantes.push("daniel");
+estudiantes.push("erick");
+console.log("se ha agregado 5 nuevos estudiantes en el arreglo y es este:")
+console.table(estudiantes)
+console.log("ahora ya tenemos elementos suficientes para aplicar el metodo slice 3,5")
+estudiantes.splice(3,5)
+console.log("El resultado es:")
+console.table(estudiantes)
+
+console.log("%c10.- Metodos para la manipulacion de arreglos inmutables", style_console)
+let zodiacos = ["Aries","Tauro","genesis","cancer","leo","virgo","libra","Escoropio","sagitario","capricornio","acuario","pisis"]
+
+Object.freeze(zodiacos);
+//zodiacos.splice(3,5)
+// no se pued modificar ya que esta congelado pero mediante desmembrar el arreglo lo podemos mutar y manipularlo
+let[signo1,,signo3,,,,signo7,,,,]= zodiacos;
+console.log(`Primer signo zodiacal: ${signo1}`)
+console.log(`tercero signo zodiacal: ${signo3}`)
+console.log(`septimo signo zodiacal: ${signo7}`)
+
+console.log("%c11.- Filtrado de elementos de un arreglo mediante (FILTER) ", style_console)
+estudiantes.push("Brisa");
+estudiantes.push("carlos");
+estudiantes.push("jesus");
+estudiantes.push("daniel");
+estudiantes.push("erick");
+estudiantes.push("yazmin");
+estudiantes.push("tadeo");
+estudiantes.push("mateo");
+estudiantes.push("christian");
+estudiantes.push("chucho");
+Object.freeze(estudiantes);
+//se congela para probar que podemos clonar el objeto sobre otro nuevo objeto que se filtra para obtener los primero 5
+//estudiantes.pop
+//ESTO CREA UN OBJETO NUEVO DONDE SE MUESTRA LO QUE SE FILTRO
+
+
+console.log("filtrado los primeros 5 estudiantes")
+
+let nuevoestudiantes = estudiantes.filter((estudiantes) => estudiantes.length>5)
+console.table(nuevoestudiantes);
+
+//con esto nos quitamos de enzima lineas de codigo con esta funcion de filter
+console.log("%c12.- Filtrado de elementos dentro de un arreglo utilizando el metodo map, en el que necesitas transformarlo ", style_console)
+console.table(zodiacos)
+
+console.table(zodiacos.map(signozodiacal => signozodiacal.toLocaleLowerCase()));
+// const costoslistacompras: number[]
+const costoslistacompras =[15,52.50,16.90,32.50,28,105,45.2,94.10]
+console.log("Los precios son")
+console.table(costoslistacompras);
+console.log(`El total de la compra es : ${costoslistacompras.reduce((total,precio)=>total+precio,0).toFixed(2)}`)
+
