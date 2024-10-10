@@ -101,3 +101,181 @@ console.log(evaluarMayoriaEdad(edadpersona, "US"));
 
 console.log("%c3.- SWITCH -CASE", style_console);
 
+
+
+//let asignaturaGeneracion = (anioNacimiento)
+
+console.log("Intentamos dividir el: 0/10, el resultado es:")
+try{
+    let result= 0/10; //
+    console.log(result)
+}
+catch{
+    console.log("Ocurrio un error"+error.messaje);
+}
+console.log("Intentamos dividir  10/0")
+try{
+    let result= 10/0; //
+    console.log(result)
+}
+catch{
+    console.log("Ocurrio un error"+error.messaje);
+}
+console.log("Intentamos dividir una variable a entre 10 pero la varaible no se define")
+try{
+    let a;
+    let result= a/10; //
+    console.log(result)
+}
+catch{
+    console.log("Ocurrio un error"+error.messaje);
+}
+console.log("Ahora se intenta dividir un dato que vale 8 entre otro que vale 2")
+try{
+    let x=8, y=2, result= x/y;//
+    console.log(result)
+}
+catch{
+    console.log("Ocurrio un error"+error.messaje);
+}
+console.log("%c5.- control de coclos (BREAK/CONTINUE)", style_console);
+
+console.log("Vamos a contar del 1 al 10...")
+for(let i=0; i<11; i++){
+    console.log(i)
+}
+console.log("Ahora si el numero llega a 7 pare")
+for(let i=0; i<11; i++){
+    if(i==7){
+       break 
+    }else
+    console.log(i)
+}
+console.log("Ahora si el numero llega a 7 se lo salte y no haga nada")
+for(let i=0; i<11; i++){
+    if(i==7){
+        continue
+    }else
+    console.log(i)
+}
+
+console.log("%c6.- Ciclo iterativo -(FOR)", style_console);
+
+console.log("Los dias de la semana son en orden asedente son:")
+let dias = ["Domingo", "Lunes ","Miercoles","Jueves ", "Viernes ", "Sabado" ]
+for(let i=0; i<dias.length-1; i++){
+    console.log(dias[i])
+}
+console.log("Los dias de la semana son en orden asedente son:")
+let meses = ["Enero", "Febrero ","Marzo","Abril ", "Mayo ", "Junio", "Agosto","Septiembre","Octubre","Nobiembre","Diciembre" ]
+for(let i=meses.length-1; i>=0; i--){
+    console.log(meses[i]);
+}
+
+console.log("%c7.- Ciclo Condicionales -(WHILE)", style_console);
+
+console.log("Los dias de la semana son en orden asedente son:")
+let findesemana = false
+let mensaje =" ";
+let j =0;
+
+while (j<dias.length){
+    switch(j){
+        case 0:
+            findesemana= true
+            mensaje= "Monmingo.. zzzzzz";
+            break;
+            case 1:
+            findesemana= false
+            mensaje= "san jueves a chambiear";
+            break;
+            case 2:
+            findesemana= false
+            mensaje= "segundo dia de chambear";
+            break;
+            case 3:
+                findesemana= false
+                mensaje= "ombligo de la semana";
+                break;
+            case 4:
+            findesemana= false
+            mensaje= "juuueeevvvebebesss";
+              break;
+            case 5:
+                findesemana= false
+                mensaje= "ultimo diaaaaa ";
+                break;
+            case 6:
+            findesemana= true
+            mensaje= "sabado de pelis";
+            break;
+ 
+        }
+        console.log(mensaje)
+j++
+}
+
+console.log("%c8.- Ciclo Condicionales, que se ejecutan al menos una vz -(DO WHILE)", style_console);
+
+console.log("Los dias de la semana son en orden asedente son:")
+let series = [
+    "Episodio 1: avatar",
+    "Episodio 2: el hoyo2",
+    "Episodio 3: endgame",
+    "Episodio 4 : blackspace",
+    "Episodio 5: napoleon"
+];
+let indice = 0;
+let continuarviendo= true;
+do{
+    console.log(`Reproduciendo ${series[indice]}`);
+    indice++;
+    if(indice<series.length){
+        continuarviendo = confirm("¿Deseas continuar con la siguiente serie");//manda un mensaje de confirmacion a la
+        //usuario para saber si desea continuar con un boolean
+
+    }else{
+        continuarviendo=false;
+    }
+
+}while(continuarviendo && indice < series.length);
+
+console.log("Fin de la reproduccion") 
+
+console.log("%c9.- ciclos para recorrrer elementos finitos  -(DO WHILE)", style_console);
+
+let series2 = [
+    {nombre:" hora de aventura", temporadas: "12", totalviews:"19M"},
+    {nombre:" el hoyo 2", temporadas: "3", totalviews:"6.5M"},
+    {nombre:" the boys", temporadas: "3", totalviews: "13M"},
+    {nombre:" Black sPACES", temporadas: "5", totalviews: "12M"},
+    {nombre:" NAPOLEON", temporadas: "5", totalviews:"3.2M"}
+];
+
+for(let serie of series2){
+    console.log(`serie: ${serie.nombre},temporada: ${serie.temporadas}`);
+}
+try{
+    console.log(`serie: ${serie.nombre},temporada: ${serie.temporadas}`);
+}catch{
+    console.log("Ocurrio un error");
+}
+
+console.log("%c10.- ciclos para recorrrerlas propiedades de elementos finitos  -(FOR.....IN)", style_console);
+
+for(let i in series2){
+    console.log(`serie ${parseInt(i)+1}:`);
+    for(let propiedad in series2[i]){
+        for(let propiedad in series2[i]){
+            console.log(`${propiedad}: ${series2[i][propiedad]}`)};
+
+    }
+    console.log(".....................................")
+}
+
+let series3 = [];
+
+series3.forEach(serie, index)=> {
+let calif =(serie.reprociones / serie.viewrs).toFixed(2);
+
+};
