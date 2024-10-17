@@ -95,8 +95,7 @@ let numeroFilas = matrizIrregular.length
 for (let i = 0;i<numeroFilas; i++)
 console.log(`La longitud de la fila ${[i]} es = ${matrizIrregular[i].length}`)
 
-
-console.log("$c5.- Agregar un nuevo elemento a un arreglo (PUSH)",style_console);
+console.log("%c5.- Agregar un nuevo elemento a un arreglo (PUSH)", style_console);
 
 let estudiantes = ["Matías", "Ciclalli", "diego", "derek","yazmin","adrian"]
 console.log("Los elementos actuales del arreglo son: ")
