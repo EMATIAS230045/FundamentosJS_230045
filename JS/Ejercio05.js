@@ -1,183 +1,258 @@
-//repaso de ciclo y sentencias de control
-//Estilizacion de los mensajes de salida
+// Repaso de  Ciclo y Sentencias de Control
+
+//Estilización de los mensajes de salida
 const bg = "linear-gradient(11deg, rgba(0,199,36,1) 0%, rgba(129,255,26,1) 33%, rgba(191,255,26,1) 86%)";
 const style_console = `background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`
 
-console.warn("Practica 07: Arreglos en Java Script")
-console.log("%c1.- Codiciones SI/Entonces... (IF)", style_console);
-//Le indica al program que hacer o que no hacer en base a una pregunta logica de verdaero o falso
+//Personalización de las Salidas a Consola
+console.warn("Práctica 07: Arreglos en Java Script")
 
+
+console.log("%c1.- Condicionales - Si/Entonces ... (IF)", style_console);
+//Le indica al programa que hacer o que no en vase a una prueba lógica de verdadero  o falso
 let fechaActual= new Date();
-/* let fecha actual = new date("2025/06/05");*/
-console.log(`Hola, LA FECH DE HOY ES : ${fechaActual.toString()}`);
+/*let fechaActual = new Date("2025/06/05");*/
+console.log(`Hola, la fecha de hoy es: ${fechaActual.toString()}`);
 
-//y si la necesitamos de forma local?
-
-const fechalocalMX = fechaActual.toLocaleString('es-MX',
+// y si la necesitamos en formato local?
+const fechaLocalMX = fechaActual.toLocaleString('es-MX',
     {
-    weekday: 'long',
-    year: 'numeric',
-    mouth: 'long',
-    hour: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: false
+        weekday: 'long',
+        year: 'numeric',
+        month:'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: false
+    });
 
-});
-console.log(`en formato local (mexico): ${fechalocalMX}`);
+console.log(`en formato local (México): ${fechaLocalMX}`);
 
-//si es antes de las doce saluda con buenos dias
-if(fechaActual.getHours()<=12)
-    console.log(`Buenos dias, hoy es: ${fechalocalMX}`);
-//Existe un extensor de la sentencia if(Si)que es else (en caso contrario)
+// Si es antes de las doce saluda con un buenos días
+
+if(fechaActual.getHours()<12)
+console.log(`Buenos días, hoy es: ${fechaLocalMX}`);
+
+// Existe un extensor de la sentencia if(Sí) que es else (en caso contrario)
 if(fechaActual.getMonth()<=6)
     console.log(`Estas en la primera mitad del año.`);
 else
-console.log(`Esta en la segunda mitad del año.`);
+    console.log(`Estas en la segunda mitad del año.`);
+        
 
-//que pasa si la validacion tiene varias operaciones
+// Que pasa si la validación tiene varias operaciones
 
-const anio = fechaActual.getFullYear;
+const anio = fechaActual.getFullYear();
 
-let inicioprimavera = new Date(anio, 2,21);
+
+let inicioPrimavera = new Date(anio, 2,21);
 let inicioVerano = new Date(anio, 5,21);
 let inicioOtonio = new Date(anio, 8,23);
-let inicioInverno = new Date(anio, 11,21);
+let inicioInvierno = new Date(anio, 11,21);
 let estacion;
-let horarioverano = false;
+let horarioVerano=false;
 
-if(fechaActual >= inicioprimavera && fechaActual< inicioVerano)
+if(fechaActual >= inicioPrimavera && fechaActual< inicioVerano)
 {
-    console.log("Estamos en Primavera...")
-    console.log("Inicia la floracion de mucha plantas...")
-    console.log("Los dias son mas largos y las noches mas cortas..")
-    console.log("Muchos animales despiertan en la hibernacion... ")
+    console.log("Estamos en PRIMAVERA...")
+    console.log("Incia la floración de muchas plantas...")
+    console.log("Los días son más largos y las noches más cortas...")
+    console.log("Muchos animales despiertan de la hibernación... ")
     estacion="Primavera"
-    horarioverano=true;
+    horarioVerano=true;
 }
 else if(fechaActual >= inicioVerano && fechaActual< inicioOtonio)
 {
-    console.log("Estamos en otoño...")
-    console.log("en esta estacion les sule cambiar epl follaje")
-    console.log("se registran temperaturas mas templadas")
-    console.log("Los animales comienzan la recoleccion de alimento y preparan  sus espacis para la hibernacion, incluso algunas aves migran.")
-    estacion="verano"
-    horarioverano=true;
+    console.log("Estamos en VERANO...")
+    console.log("En esta temporada los abundan los días Soleados y Calurosos...")
+    console.log("En esta temporada el indicé de turismo vacacional sube...")
+    console.log("Mucha gente busca realizar actividades al aire ... ")
+    estacion="Verano"
+    horarioVerano=true;
 }
-else{
+else if(fechaActual >= inicioOtonio && fechaActual< inicioInvierno)
+    {
+        console.log("Estamos en OTOÑO...")
+        console.log("Los árboles suelen cambiar de follaje")
+        console.log("Se registarán temperaturas más templadas")
+        console.log("Los animales comienza con la recolección de alimento y preparan sus espacios para la hibernación, incluso algunas aves migran.")
+        estacion="Verano"
+        horarioVerano=true;
+    }
+else 
+{
+       console.log("Estamos en INVIERNO..")
+       console.log("En esta temporada los días son más cortos y las noches más largas...")
+       console.log("En algunas regiones suele nevar ...")
+       console.log("Dado las bajas temperaturas, se recomienda abrigarse")
+       estacion="Invierno"
+       horarioVerano=false;
+               
+}    
 
-console.log("Estamos en Invierno...")
-console.log("en esta estacion los dias son mas cortos y losa noches mas largas")
-console.log("en algunas regiones sule nevar")
-console.log("Dado las temperaturas, se recomienda abrigarse ")
-estacion="Invierno"
-horarioverano=false;
-}
 
-console.log("%c2.- Codiciones SI/Entonces... ( Validacion?cumple:no_cumple)", style_console);
-//En Java Script exista una operacion simplificada que valida esi una condicion cumplee o no y que hacer en cada caso
+console.log("%c2.- Operador Ternario ( validacion?cumple:no_cumple) ", style_console);
+// En Java Script exista una operación simplicada que valida si una condición se cumple o no, y que hacer en cada caso
 
-const edadpersona = 18;
-const mayoriaedadMX = 18;
+const edadPersona = 18;
+const mayoriaEdadMX = 18;
 const mayoriaEdadUS = 21;
 
 let evaluarMayoriaEdad = (edad) =>
-    edad>=18 ? "Eres mayor de edad.": "No eres mayores de edad."
-console.log("Evaluando la mayoria de edad de unapersona...")
-console.log(evaluarMayoriaEdad(edadpersona));
+    edad>=18 ? "Eres mayor de edad.": "No eres mayor de edad."
 
-/** si embargo tenemos que considarar que la mayorias de edad vara de cada pais
- * por cuestiones legales, por lo que dabemos considerar un  segundo parametro en la evaluacion.*/
+console.log("Evaluando la mayoría de edad de una persona...")
+console.log(evaluarMayoriaEdad(edadPersona));
+
+// Sin embargo tenemos que considerar que la mayoría de edad varia en cada país por cuestiones legales, por lo que debemos considerar un segundo parámmetro en la evalación.
 
 evaluarMayoriaEdad = (edad,pais) =>
-(edad>=18 && pais==="MX")?`En ${pais} eres mayor de edad `:`En ${pais} NO eres mayor de edad`;
+    (edad>=18 && pais==="MX")?`En ${pais} eres mayor de edad `:`En ${pais} NO eres mayor de edad `;
 
-console.log("Evaluado la mayoria de edad de una persona en mexico...")
-console.log(evaluarMayoriaEdad(edadpersona, "MX"));
+console.log("Evaluando la mayoría de edad de una persona en México...")
+console.log(evaluarMayoriaEdad(edadPersona, "MX"));
 
-console.log("Evaluado la mayoria de edad de una persona Estados Unidos...")
-console.log(evaluarMayoriaEdad(edadpersona, "US"));
-
-console.log("%c3.- SWITCH -CASE", style_console);
+console.log("Evaluando la mayoría de edad de una persona en Estados Unidos...")
+console.log(evaluarMayoriaEdad(edadPersona, "US"));
 
 
+console.log("%c3.- SwITCH - CASE ( Elección por valor definido) ", style_console);
 
-//let asignaturaGeneracion = (anioNacimiento)
+// Calculando tu generación en base a tu edad
 
-console.log("Intentamos dividir el: 0/10, el resultado es:")
-try{
-    let result= 0/10; //
+let asingaGeneracion = (anioNacimiento)=>{
+    switch(true)
+    {
+        case(anioNacimiento<1968):   //Baby Boomers 
+            return "Baby Boomers";
+
+        case (anioNacimiento>1968 && anioNacimiento<=1980): 
+            return "Generación X";
+
+        case (anioNacimiento>1980 && anioNacimiento<=1994):
+            return "Milenials";
+        
+        case (anioNacimiento>1994 && anioNacimiento<=2010):
+            return "Centenials";
+            
+        case (anioNacimiento>2010):
+            return "Krystal";
+    }
+}
+
+console.log(`Dado que naci en el año 1982 soy de la generación: ${asingaGeneracion(1982)}`);
+
+
+console.log("%c4.- Manejo de Excepciones (TRY / CATCH)) ", style_console);
+
+//En algunas ocaciones existiran errores que no son culpa del programa, si no del usuario, la red, el so o incluso de un middleware., pero que si duda debemos controlar para evitar las fallas de ejecución. 
+ 
+console.log("Intentamos dividir : 0/10, el resultado es: ")
+
+try{     //intenta
+    let result=  0/10;   //dividir 0 entre un entero
     console.log(result)
 }
-catch{
-    console.log("Ocurrio un error"+error.messaje);
-}
-console.log("Intentamos dividir  10/0")
-try{
-    let result= 10/0; //
-    console.log(result)
-}
-catch{
-    console.log("Ocurrio un error"+error.messaje);
-}
-console.log("Intentamos dividir una variable a entre 10 pero la varaible no se define")
-try{
-    let a;
-    let result= a/10; //
-    console.log(result)
-}
-catch{
-    console.log("Ocurrio un error"+error.messaje);
-}
-console.log("Ahora se intenta dividir un dato que vale 8 entre otro que vale 2")
-try{
-    let x=8, y=2, result= x/y;//
-    console.log(result)
-}
-catch{
-    console.log("Ocurrio un error"+error.messaje);
-}
-console.log("%c5.- control de coclos (BREAK/CONTINUE)", style_console);
-
-console.log("Vamos a contar del 1 al 10...")
-for(let i=0; i<11; i++){
-    console.log(i)
-}
-console.log("Ahora si el numero llega a 7 pare")
-for(let i=0; i<11; i++){
-    if(i==7){
-       break 
-    }else
-    console.log(i)
-}
-console.log("Ahora si el numero llega a 7 se lo salte y no haga nada")
-for(let i=0; i<11; i++){
-    if(i==7){
-        continue
-    }else
-    console.log(i)
+catch(error)
+{
+    console.log("Ocurrio un error: "+error.message);
 }
 
-console.log("%c6.- Ciclo iterativo -(FOR)", style_console);
 
-console.log("Los dias de la semana son en orden asedente son:")
-let dias = ["Domingo", "Lunes ","Miercoles","Jueves ", "Viernes ", "Sabado" ]
-for(let i=0; i<dias.length-1; i++){
+console.log("Intentamos dividir : 10/0, el resultado es: ")
+
+try{     //intenta
+    let result=  10/0;   //dividir un entero entre 0
+    console.log(result)
+}
+catch(error)
+{
+    console.log("Ocurrio un error: "+error.message);
+}
+
+console.log("Intentamos dividir : a/10, el resultado es: ")
+
+try{     //intenta
+    let result=  "a"/10;   //dividir una letra entre 0
+    console.log(result)
+}
+catch(error)
+{
+    console.log("Ocurrio un error: "+error.message);
+}
+
+
+
+console.log("Intentamos dividir : la variable a / 10, el resultado es: ")
+
+try{     //intenta
+    let result=  a/10;   //dividir una variable no definida entre 0
+    console.log(result)
+}
+catch(error)
+{
+    console.log("Ocurrio un error: "+error.message);
+}
+
+console.log("Intentamos dividir : el valor de la variable x / entre el valor de la variable y, el resultado es: ")
+
+try{     //intenta
+    let x=8, y=2, result=  x/y;   
+    console.log(result)
+}
+catch(error)
+{
+    console.log("Ocurrio un error: "+error.message);
+}
+
+console.log("%c5.- Control de Ciclos  (BREAK / CONTINUE) ", style_console);
+
+// En alguna ocaciones será importante detener un ciclo de manera abrupta para controlar casos especiales en un ciclo... 
+
+console.log("Vamos a contar del 1 al 10....")
+for(let num =1; num <=10; num++)
+    console.log(num);
+
+console.log("Ahora necesitamos que si llegas al 7 pares de contar... suponiendo que solo por hoy es de mala suerte...")
+
+for(num =1; num <=10; num++)
+    if(num==7)
+        break;
+    else 
+        console.log(num);
+
+console.log("Ahora necesitamos que si llegas al 7 te saltes ese número y continues")
+
+for(num =1; num <=10; num++)
+{
+    if(num==7)
+        {
+            continue;
+        }
+    console.log(num);
+}
+
+console.log("%c6.- Ciclo Iterativo - (FOR) ", style_console);
+// Recorre de manera iterativa  (i), de incremental o decremental
+
+console.log("Los días de la semana son en orden ascendente son:")
+let dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+
+for(let i=0; i<dias.length;i++)
     console.log(dias[i])
-}
-console.log("Los dias de la semana son en orden asedente son:")
-let meses = ["Enero", "Febrero ","Marzo","Abril ", "Mayo ", "Junio", "Agosto","Septiembre","Octubre","Nobiembre","Diciembre" ]
-for(let i=meses.length-1; i>=0; i--){
+
+console.log("Ahora vamos a imprimir los meses en orden descendente...")
+const meses=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+for(let i=meses.length-1; i>=0; i-- )
     console.log(meses[i]);
-}
 
-console.log("%c7.- Ciclo Condicionales -(WHILE)", style_console);
+console.log("%c7.- Ciclo Condicionales - (WHILE) ", style_console);
+//Estos ciclos (BUCKLE) dependen de una condición para continuar ejecutandose
+let finDeSemana = false;
+let mensaje = "";
+let j = 0;
 
-console.log("Los dias de la semana son en orden asedente son:")
-let findesemana = false
-let mensaje =" ";
-let j =0;
 
 while (j<dias.length){
     switch(j){
@@ -213,69 +288,119 @@ while (j<dias.length){
         }
         console.log(mensaje)
 j++
+
+    // Imprimir el nombre del día y su mensaje
+    if(!finDeSemana)
+    {
+        console.log(`Día: ${dias[j]}`);
+        console.log(`Mensaje del día: ${mensaje}`);
+    }
+
 }
 
-console.log("%c8.- Ciclo Condicionales, que se ejecutan al menos una vz -(DO WHILE)", style_console);
 
-console.log("Los dias de la semana son en orden asedente son:")
-let series = [
-    "Episodio 1: avatar",
+
+console.log("%c8.- Ciclo Condicionales, que se ejecuta al menos una vez - (DO WHILE) ", style_console);
+
+// Simulamos una lista de episodios de una temporada
+let episodios = [
+   "Episodio 1: avatar",
     "Episodio 2: el hoyo2",
     "Episodio 3: endgame",
     "Episodio 4 : blackspace",
     "Episodio 5: napoleon"
 ];
-let indice = 0;
-let continuarviendo= true;
-do{
-    console.log(`Reproduciendo ${series[indice]}`);
-    indice++;
-    if(indice<series.length){
-        continuarviendo = confirm("¿Deseas continuar con la siguiente serie");//manda un mensaje de confirmacion a la
-        //usuario para saber si desea continuar con un boolean
 
-    }else{
-        continuarviendo=false;
+let indice = 0;
+let continuarViendo = true; // Esta variable simula la decisión del usuario de continuar viendo
+
+do {
+    console.log(`Reproduciendo ${episodios[indice]}`);
+
+    // Simulamos la reproducción del episodio
+    indice++;
+
+    // Simulamos una pregunta al usuario si desea seguir viendo
+    if (indice < episodios.length) {
+        continuarViendo = confirm("¿Deseas continuar con el siguiente episodio?");
+    } else {
+        continuarViendo = false; // Cuando se acaba la lista de episodios
     }
 
-}while(continuarviendo && indice < series.length);
+} while (continuarViendo && indice < episodios.length);
 
-console.log("Fin de la reproduccion") 
+console.log("Fin de la reproducción.");
 
-console.log("%c9.- ciclos para recorrrer elementos finitos  -(DO WHILE)", style_console);
+// Ciclo  para recorrer objetos iterables cómo mapas, arreglos, cadenas y conjuntos de datos.
+console.log("%c9.- Cliclos para recorrer elementos finitos- (FOR ... OF) ", style_console);
 
-let series2 = [
-    {nombre:" hora de aventura", temporadas: "12", totalviews:"19M"},
-    {nombre:" el hoyo 2", temporadas: "3", totalviews:"6.5M"},
-    {nombre:" the boys", temporadas: "3", totalviews: "13M"},
-    {nombre:" Black sPACES", temporadas: "5", totalviews: "12M"},
-    {nombre:" NAPOLEON", temporadas: "5", totalviews:"3.2M"}
+let seriesTrending = [
+    { nombre: "The Witcher", temporadas: 3, totalViewers: "1.5M", totalReprods: "3.0M" },
+    { nombre: "Stranger Things", temporadas: 4, totalViewers: "6.5M", totalReprods:"10M" },
+    { nombre: "The Boys", temporadas: 3 , totalViewers: "3.2M"},
+    { nombre: "Loki", temporadas: 2, totalReprods:"250K" },
+    { nombre: "Succession", temporadas: 4 }
 ];
 
-for(let serie of series2){
-    console.log(`serie: ${serie.nombre},temporada: ${serie.temporadas}`);
+// Usando for...of para recorrer la lista
+for (let serie of seriesTrending) {
+    console.log(`Serie: ${serie.nombre}, Temporadas: ${serie.temporadas}`);
 }
+
 try{
-    console.log(`serie: ${serie.nombre},temporada: ${serie.temporadas}`);
-}catch{
-    console.log("Ocurrio un error");
+    console.log(`La ultima serie leida fué: ${serie.nombre}`); // No va a funcionar por la varie serie ya no existe ya que su alcance solo estuvo durante el ciclo
+}
+catch(error)
+{
+    console.log("Mensaje de error: "+error.message)
 }
 
-console.log("%c10.- ciclos para recorrrerlas propiedades de elementos finitos  -(FOR.....IN)", style_console);
+console.log("%c10.- Ciclos para recorrer las propiedades de  elementos finitos- (FOR ... IN) ", style_console);
 
-for(let i in series2){
-    console.log(`serie ${parseInt(i)+1}:`);
-    for(let propiedad in series2[i]){
-        for(let propiedad in series2[i]){
-            console.log(`${propiedad}: ${series2[i][propiedad]}`)};
-
+// Usando for...in para recorrer cada serie
+for (let i in seriesTrending) {
+    console.log(`Serie ${parseInt(i) + 1}:`);
+    for (let propiedad in seriesTrending[i]) {
+        console.log(`${propiedad}: ${seriesTrending[i][propiedad]}`);
     }
-    console.log(".....................................")
+    console.log('---------------------');
 }
 
-let series3 = [];
+console.log("%c11.- Ciclos ininterrumpidos para cada uno de los elementos del arreglo (FOR EACH) ", style_console);
 
-series3.forEach(serie, index)=> {
-let calif =(serie.reprociones / serie.viewrs).toFixed(2);
+// Lista de series de TV trending con temporadas, viewers y reproducciones
+let seriesTrending2 = [
+    { nombre: "Hora de Aventura", temporadas: 3, viewers: 8000000, reproducciones: 25000000 },
+    { nombre: "The boys", temporadas: 4, viewers: 12000000, reproducciones: 40000000 },
+    { nombre: "Dead rigsing", temporadas: 3, viewers: 7000000, reproducciones: 22000000 },
+    { nombre: "What If", temporadas: 2, viewers: 9000000, reproducciones: 30000000 },
+    { nombre: "Show More", temporadas: 4, viewers: 6000000, reproducciones: 18000000 },
+    { nombre: "Hotweels", temporadas: 16, viewers: 16000000, reproducciones: 36000000 }
+];
 
-};
+// Usando forEach para recorrer cada serie y calcular la calificación
+seriesTrending2.forEach((serie, index) => {
+    let calificacion = (serie.reproducciones / serie.viewers).toFixed(2); // Calcula la calificación y la redondea a 2 decimales
+    console.log(`Serie ${index + 1}:`);
+    console.log(`Nombre: ${serie.nombre}`);
+    console.log(`Temporadas: ${serie.temporadas}`);
+    console.log(`Viewers: ${serie.viewers}`);
+    console.log(`Reproducciones: ${serie.reproducciones}`);
+    console.log(`Calificación: ${calificacion}`); // Muestra la calificación
+    console.log('---------------------');
+});
+
+
+// Usando Filter para filtrar , y map para transformar la información.
+// Lista de series que queremos verificar
+let seriesDeseadas = ["Hotweels", "The Boys", "Hora de Aventura"];
+
+// Usando map e includes para filtrar y obtener los nombres de series con 3 temporadas
+let seriesConTresTemporadas = seriesTrending2
+    .filter(serie => serie.temporadas <= 3) // Filtramos las series que tienen 3 temporadas
+    .map(serie => serie.nombre) // Obtenemos solo los nombres de esas series
+    .filter(nombre => seriesDeseadas.includes(nombre)); // Filtramos las que están en la lista de series deseadas
+
+// Mostrar los resultados
+console.log("Series con 3 temporadas que están en la lista deseada:");
+console.log(seriesConTresTemporadas);
