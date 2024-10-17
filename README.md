@@ -15,6 +15,7 @@ previo a inicializar el desarrollo de software para web usando el fremework de N
 |4|Declaracion de datos (String/BigInit/Symbol/Null/Function)|6|Finalizada|
 |5|Introducion a objetos|19|Finalizada|
 |6|arreglos|18|Finalizada|
+|7|Sentencias de control y ciclos|16|Finalizada|
 
 
 ## Autor 
